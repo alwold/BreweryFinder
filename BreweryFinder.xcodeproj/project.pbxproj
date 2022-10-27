@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B1984290A2CFC009C8DCE /* AppDelegate.swift */; };
 		889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B1986290A2CFC009C8DCE /* SceneDelegate.swift */; };
-		889B1989290A2CFC009C8DCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B1988290A2CFC009C8DCE /* ViewController.swift */; };
-		889B198C290A2CFC009C8DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889B198A290A2CFC009C8DCE /* Main.storyboard */; };
 		889B198E290A2CFD009C8DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889B198D290A2CFD009C8DCE /* Assets.xcassets */; };
 		889B1991290A2CFD009C8DCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889B198F290A2CFD009C8DCE /* LaunchScreen.storyboard */; };
 		889B199C290A2CFD009C8DCE /* BreweryFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B199B290A2CFD009C8DCE /* BreweryFinderTests.swift */; };
@@ -18,6 +16,8 @@
 		889B19A8290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19A7290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift */; };
 		889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B4290A2DC7009C8DCE /* HomeView.swift */; };
 		889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */; };
+		889B19B9290A2F9D009C8DCE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B8290A2F9D009C8DCE /* HomeViewController.swift */; };
+		889B19BB290A2FC1009C8DCE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,6 @@
 		889B1981290A2CFC009C8DCE /* BreweryFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreweryFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889B1984290A2CFC009C8DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889B1986290A2CFC009C8DCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		889B1988290A2CFC009C8DCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		889B198B290A2CFC009C8DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		889B198D290A2CFD009C8DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		889B1990290A2CFD009C8DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		889B1992290A2CFD009C8DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +51,8 @@
 		889B19A7290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		889B19B4290A2DC7009C8DCE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
+		889B19B8290A2F9D009C8DCE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +105,13 @@
 			children = (
 				889B1984290A2CFC009C8DCE /* AppDelegate.swift */,
 				889B1986290A2CFC009C8DCE /* SceneDelegate.swift */,
-				889B1988290A2CFC009C8DCE /* ViewController.swift */,
-				889B198A290A2CFC009C8DCE /* Main.storyboard */,
 				889B198D290A2CFD009C8DCE /* Assets.xcassets */,
 				889B198F290A2CFD009C8DCE /* LaunchScreen.storyboard */,
 				889B1992290A2CFD009C8DCE /* Info.plist */,
 				889B19B4290A2DC7009C8DCE /* HomeView.swift */,
 				889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */,
+				889B19B8290A2F9D009C8DCE /* HomeViewController.swift */,
+				889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */,
 			);
 			path = BreweryFinder;
 			sourceTree = "<group>";
@@ -239,7 +239,6 @@
 			files = (
 				889B1991290A2CFD009C8DCE /* LaunchScreen.storyboard in Resources */,
 				889B198E290A2CFD009C8DCE /* Assets.xcassets in Resources */,
-				889B198C290A2CFC009C8DCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,10 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */,
-				889B1989290A2CFC009C8DCE /* ViewController.swift in Sources */,
 				889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */,
 				889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */,
+				889B19BB290A2FC1009C8DCE /* MainNavigationController.swift in Sources */,
 				889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */,
+				889B19B9290A2F9D009C8DCE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +305,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		889B198A290A2CFC009C8DCE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				889B198B290A2CFC009C8DCE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		889B198F290A2CFD009C8DCE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -450,7 +442,6 @@
 				INFOPLIST_FILE = BreweryFinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -478,7 +469,6 @@
 				INFOPLIST_FILE = BreweryFinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

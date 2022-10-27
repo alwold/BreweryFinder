@@ -5,6 +5,7 @@ final class HomeView: UIView {
     
     init() {
         super.init(frame: .zero)
+        backgroundColor = .white
         addSubview(titleLabel)
         
         setConstraints()
