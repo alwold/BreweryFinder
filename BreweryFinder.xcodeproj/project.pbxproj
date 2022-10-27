@@ -16,6 +16,8 @@
 		889B199C290A2CFD009C8DCE /* BreweryFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B199B290A2CFD009C8DCE /* BreweryFinderTests.swift */; };
 		889B19A6290A2CFE009C8DCE /* BreweryFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19A5290A2CFE009C8DCE /* BreweryFinderUITests.swift */; };
 		889B19A8290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19A7290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift */; };
+		889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B4290A2DC7009C8DCE /* HomeView.swift */; };
+		889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		889B19A1290A2CFD009C8DCE /* BreweryFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreweryFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		889B19A5290A2CFE009C8DCE /* BreweryFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryFinderUITests.swift; sourceTree = "<group>"; };
 		889B19A7290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		889B19B4290A2DC7009C8DCE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				889B198D290A2CFD009C8DCE /* Assets.xcassets */,
 				889B198F290A2CFD009C8DCE /* LaunchScreen.storyboard */,
 				889B1992290A2CFD009C8DCE /* Info.plist */,
+				889B19B4290A2DC7009C8DCE /* HomeView.swift */,
+				889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */,
 			);
 			path = BreweryFinder;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */,
 				889B1989290A2CFC009C8DCE /* ViewController.swift in Sources */,
+				889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */,
 				889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */,
 				889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */,
 			);
