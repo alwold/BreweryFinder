@@ -84,16 +84,15 @@
 		889B1983290A2CFC009C8DCE /* BreweryFinder */ = {
 			isa = PBXGroup;
 			children = (
+				88C1AB58290B92DE00844D51 /* Services */,
+				88C1AB57290B92C400844D51 /* Home */,
 				889B1984290A2CFC009C8DCE /* AppDelegate.swift */,
 				889B1986290A2CFC009C8DCE /* SceneDelegate.swift */,
 				889B198D290A2CFD009C8DCE /* Assets.xcassets */,
 				889B198F290A2CFD009C8DCE /* LaunchScreen.storyboard */,
 				889B1992290A2CFD009C8DCE /* Info.plist */,
-				889B19B4290A2DC7009C8DCE /* HomeView.swift */,
 				889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */,
-				889B19B8290A2F9D009C8DCE /* HomeViewController.swift */,
 				889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */,
-				88C1AB55290A48FA00844D51 /* LocationService.swift */,
 			);
 			path = BreweryFinder;
 			sourceTree = "<group>";
@@ -104,6 +103,23 @@
 				88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */,
 			);
 			path = BreweryFinderTests;
+			sourceTree = "<group>";
+		};
+		88C1AB57290B92C400844D51 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				889B19B4290A2DC7009C8DCE /* HomeView.swift */,
+				889B19B8290A2F9D009C8DCE /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		88C1AB58290B92DE00844D51 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				88C1AB55290A48FA00844D51 /* LocationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
