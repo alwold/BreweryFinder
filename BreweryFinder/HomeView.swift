@@ -5,9 +5,7 @@ final class HomeView: UIView {
     
     let titleLabel = UILabel()
     
-    let findByLocationButton = UIButton(type: .roundedRect, primaryAction: UIAction { _ in
-        print("tap")
-    })
+    let findByLocationButton = UIButton()
     
     init() {
         super.init(frame: .zero)

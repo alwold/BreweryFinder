@@ -11,24 +11,16 @@
 		889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B1986290A2CFC009C8DCE /* SceneDelegate.swift */; };
 		889B198E290A2CFD009C8DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889B198D290A2CFD009C8DCE /* Assets.xcassets */; };
 		889B1991290A2CFD009C8DCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889B198F290A2CFD009C8DCE /* LaunchScreen.storyboard */; };
-		889B199C290A2CFD009C8DCE /* BreweryFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B199B290A2CFD009C8DCE /* BreweryFinderTests.swift */; };
-		889B19A6290A2CFE009C8DCE /* BreweryFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19A5290A2CFE009C8DCE /* BreweryFinderUITests.swift */; };
-		889B19A8290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19A7290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift */; };
 		889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B4290A2DC7009C8DCE /* HomeView.swift */; };
 		889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */; };
 		889B19B9290A2F9D009C8DCE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19B8290A2F9D009C8DCE /* HomeViewController.swift */; };
 		889B19BB290A2FC1009C8DCE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */; };
+		88C1AB54290A486A00844D51 /* MainNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */; };
+		88C1AB56290A48FA00844D51 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB55290A48FA00844D51 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		889B1998290A2CFD009C8DCE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 889B1979290A2CFC009C8DCE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 889B1980290A2CFC009C8DCE;
-			remoteInfo = BreweryFinder;
-		};
-		889B19A2290A2CFE009C8DCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 889B1979290A2CFC009C8DCE /* Project object */;
 			proxyType = 1;
@@ -45,14 +37,12 @@
 		889B1990290A2CFD009C8DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		889B1992290A2CFD009C8DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		889B1997290A2CFD009C8DCE /* BreweryFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreweryFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		889B199B290A2CFD009C8DCE /* BreweryFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryFinderTests.swift; sourceTree = "<group>"; };
-		889B19A1290A2CFD009C8DCE /* BreweryFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreweryFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		889B19A5290A2CFE009C8DCE /* BreweryFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryFinderUITests.swift; sourceTree = "<group>"; };
-		889B19A7290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		889B19B4290A2DC7009C8DCE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		889B19B8290A2F9D009C8DCE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationControllerTests.swift; sourceTree = "<group>"; };
+		88C1AB55290A48FA00844D51 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +60,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		889B199E290A2CFD009C8DCE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +68,6 @@
 			children = (
 				889B1983290A2CFC009C8DCE /* BreweryFinder */,
 				889B199A290A2CFD009C8DCE /* BreweryFinderTests */,
-				889B19A4290A2CFE009C8DCE /* BreweryFinderUITests */,
 				889B1982290A2CFC009C8DCE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +77,6 @@
 			children = (
 				889B1981290A2CFC009C8DCE /* BreweryFinder.app */,
 				889B1997290A2CFD009C8DCE /* BreweryFinderTests.xctest */,
-				889B19A1290A2CFD009C8DCE /* BreweryFinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +93,7 @@
 				889B19B6290A2ED0009C8DCE /* UIViewPreview.swift */,
 				889B19B8290A2F9D009C8DCE /* HomeViewController.swift */,
 				889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */,
+				88C1AB55290A48FA00844D51 /* LocationService.swift */,
 			);
 			path = BreweryFinder;
 			sourceTree = "<group>";
@@ -119,18 +101,9 @@
 		889B199A290A2CFD009C8DCE /* BreweryFinderTests */ = {
 			isa = PBXGroup;
 			children = (
-				889B199B290A2CFD009C8DCE /* BreweryFinderTests.swift */,
+				88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */,
 			);
 			path = BreweryFinderTests;
-			sourceTree = "<group>";
-		};
-		889B19A4290A2CFE009C8DCE /* BreweryFinderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				889B19A5290A2CFE009C8DCE /* BreweryFinderUITests.swift */,
-				889B19A7290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift */,
-			);
-			path = BreweryFinderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,24 +144,6 @@
 			productReference = 889B1997290A2CFD009C8DCE /* BreweryFinderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		889B19A0290A2CFD009C8DCE /* BreweryFinderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 889B19B1290A2CFE009C8DCE /* Build configuration list for PBXNativeTarget "BreweryFinderUITests" */;
-			buildPhases = (
-				889B199D290A2CFD009C8DCE /* Sources */,
-				889B199E290A2CFD009C8DCE /* Frameworks */,
-				889B199F290A2CFD009C8DCE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				889B19A3290A2CFE009C8DCE /* PBXTargetDependency */,
-			);
-			name = BreweryFinderUITests;
-			productName = BreweryFinderUITests;
-			productReference = 889B19A1290A2CFD009C8DCE /* BreweryFinderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,10 +159,7 @@
 					};
 					889B1996290A2CFD009C8DCE = {
 						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 889B1980290A2CFC009C8DCE;
-					};
-					889B19A0290A2CFD009C8DCE = {
-						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1410;
 						TestTargetID = 889B1980290A2CFC009C8DCE;
 					};
 				};
@@ -227,7 +179,6 @@
 			targets = (
 				889B1980290A2CFC009C8DCE /* BreweryFinder */,
 				889B1996290A2CFD009C8DCE /* BreweryFinderTests */,
-				889B19A0290A2CFD009C8DCE /* BreweryFinderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,13 +200,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		889B199F290A2CFD009C8DCE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C1AB56290A48FA00844D51 /* LocationService.swift in Sources */,
 				889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */,
 				889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */,
 				889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */,
@@ -276,16 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				889B199C290A2CFD009C8DCE /* BreweryFinderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		889B199D290A2CFD009C8DCE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				889B19A6290A2CFE009C8DCE /* BreweryFinderUITests.swift in Sources */,
-				889B19A8290A2CFE009C8DCE /* BreweryFinderUITestsLaunchTests.swift in Sources */,
+				88C1AB54290A486A00844D51 /* MainNavigationControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,11 +232,6 @@
 			isa = PBXTargetDependency;
 			target = 889B1980290A2CFC009C8DCE /* BreweryFinder */;
 			targetProxy = 889B1998290A2CFD009C8DCE /* PBXContainerItemProxy */;
-		};
-		889B19A3290A2CFE009C8DCE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 889B1980290A2CFC009C8DCE /* BreweryFinder */;
-			targetProxy = 889B19A2290A2CFE009C8DCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -489,15 +420,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24TZPXL52Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alwold.BreweryFinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreweryFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BreweryFinder";
@@ -509,11 +447,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24TZPXL52Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alwold.BreweryFinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -521,42 +465,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreweryFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BreweryFinder";
-			};
-			name = Release;
-		};
-		889B19B2290A2CFE009C8DCE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24TZPXL52Z;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alwold.BreweryFinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BreweryFinder;
-			};
-			name = Debug;
-		};
-		889B19B3290A2CFE009C8DCE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24TZPXL52Z;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alwold.BreweryFinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BreweryFinder;
 			};
 			name = Release;
 		};
@@ -586,15 +494,6 @@
 			buildConfigurations = (
 				889B19AF290A2CFE009C8DCE /* Debug */,
 				889B19B0290A2CFE009C8DCE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		889B19B1290A2CFE009C8DCE /* Build configuration list for PBXNativeTarget "BreweryFinderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				889B19B2290A2CFE009C8DCE /* Debug */,
-				889B19B3290A2CFE009C8DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
