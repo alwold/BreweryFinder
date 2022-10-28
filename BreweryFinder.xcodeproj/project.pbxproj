@@ -17,6 +17,10 @@
 		889B19BB290A2FC1009C8DCE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */; };
 		88C1AB54290A486A00844D51 /* MainNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */; };
 		88C1AB56290A48FA00844D51 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB55290A48FA00844D51 /* LocationService.swift */; };
+		88C1AB5B290B930A00844D51 /* NearbyBreweriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB5A290B930A00844D51 /* NearbyBreweriesView.swift */; };
+		88C1AB5D290B96F300844D51 /* NearbyBreweriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB5C290B96F300844D51 /* NearbyBreweriesViewController.swift */; };
+		88C1AB5F290B972E00844D51 /* NearbyBreweriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB5E290B972E00844D51 /* NearbyBreweriesViewModel.swift */; };
+		88C1AB61290B9CD600844D51 /* NearbyBreweryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB60290B9CD600844D51 /* NearbyBreweryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		889B19BA290A2FC1009C8DCE /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationControllerTests.swift; sourceTree = "<group>"; };
 		88C1AB55290A48FA00844D51 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		88C1AB5A290B930A00844D51 /* NearbyBreweriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweriesView.swift; sourceTree = "<group>"; };
+		88C1AB5C290B96F300844D51 /* NearbyBreweriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweriesViewController.swift; sourceTree = "<group>"; };
+		88C1AB5E290B972E00844D51 /* NearbyBreweriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweriesViewModel.swift; sourceTree = "<group>"; };
+		88C1AB60290B9CD600844D51 /* NearbyBreweryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 		889B1983290A2CFC009C8DCE /* BreweryFinder */ = {
 			isa = PBXGroup;
 			children = (
+				88C1AB59290B92FA00844D51 /* Nearby Breweries */,
 				88C1AB58290B92DE00844D51 /* Services */,
 				88C1AB57290B92C400844D51 /* Home */,
 				889B1984290A2CFC009C8DCE /* AppDelegate.swift */,
@@ -120,6 +129,17 @@
 				88C1AB55290A48FA00844D51 /* LocationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		88C1AB59290B92FA00844D51 /* Nearby Breweries */ = {
+			isa = PBXGroup;
+			children = (
+				88C1AB5A290B930A00844D51 /* NearbyBreweriesView.swift */,
+				88C1AB5C290B96F300844D51 /* NearbyBreweriesViewController.swift */,
+				88C1AB5E290B972E00844D51 /* NearbyBreweriesViewModel.swift */,
+				88C1AB60290B9CD600844D51 /* NearbyBreweryCell.swift */,
+			);
+			path = "Nearby Breweries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +243,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C1AB5B290B930A00844D51 /* NearbyBreweriesView.swift in Sources */,
 				88C1AB56290A48FA00844D51 /* LocationService.swift in Sources */,
 				889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */,
 				889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */,
+				88C1AB5F290B972E00844D51 /* NearbyBreweriesViewModel.swift in Sources */,
 				889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */,
+				88C1AB5D290B96F300844D51 /* NearbyBreweriesViewController.swift in Sources */,
+				88C1AB61290B9CD600844D51 /* NearbyBreweryCell.swift in Sources */,
 				889B19BB290A2FC1009C8DCE /* MainNavigationController.swift in Sources */,
 				889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */,
 				889B19B9290A2F9D009C8DCE /* HomeViewController.swift in Sources */,

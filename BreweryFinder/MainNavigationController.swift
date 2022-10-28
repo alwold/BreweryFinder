@@ -34,7 +34,8 @@ extension MainNavigationController: HomeViewControllerDelegate {
     func handle(authorizationStatus: CLAuthorizationStatus) {
         switch authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
-            print("move to next screen")
+            let viewController = NearbyBreweriesViewController()
+            pushViewController(viewController, animated: true)
         case .denied:
             let alert = UIAlertController(title: "Location access disabled", message: "It looks like location access has been disabled. If you'd like to find breweries, you'll need to enable it in settings.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Open Settings", style: .default) {_ in

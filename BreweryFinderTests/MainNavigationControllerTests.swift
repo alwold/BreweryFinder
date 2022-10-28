@@ -22,8 +22,9 @@ class MockLocationService: LocationService {
     
     let authorizationStatus: CLAuthorizationStatus = .notDetermined
     
-    func requestWhenInUseAuthorization() async {
+    func requestWhenInUseAuthorization() async -> CLAuthorizationStatus {
         print("requesting permission")
         permissionWasRequested = true
+        return .authorizedWhenInUse
     }
 }
