@@ -16,12 +16,14 @@ final class NearbyBreweriesViewModel: NSObject {
     }
     
     var mapAnnotations: AnyPublisher<[MKAnnotation], Never> {
-        breweries.map { breweries in
-            breweries.compactMap { brewery in
-                guard let coordinate = brewery.coordinate else {
-                    return nil
-                }
-                return MKPlacemark(coordinate: coordinate)
+        breweries
+            .dropFirst()
+            .map { breweries in
+                breweries.compactMap { brewery in
+                    guard let coordinate = brewery.coordinate else {
+                        return nil
+                    }
+                    return MKPlacemark(coordinate: coordinate)
             }
         }
         .eraseToAnyPublisher()
