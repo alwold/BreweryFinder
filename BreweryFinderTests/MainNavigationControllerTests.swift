@@ -18,6 +18,10 @@ class MainNavigationControllerTests: XCTestCase {
 }
 
 class MockLocationService: LocationService {
+    func getLocation() async throws -> CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: -112, longitude: 33)
+    }
+    
     var permissionWasRequested = false
     
     let authorizationStatus: CLAuthorizationStatus = .notDetermined
