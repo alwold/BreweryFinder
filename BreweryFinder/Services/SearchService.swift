@@ -4,7 +4,7 @@ import Foundation
 struct Brewery: Decodable {
     let name: String
     let breweryType: String
-    let street: String
+    let street: String?
     let address2: String?
     let address3: String?
     let city: String
@@ -13,7 +13,7 @@ struct Brewery: Decodable {
     let country: String
     let longitude: String
     let latitude: String
-    let phone: String
+    let phone: String?
     let websiteUrl: String?
 }
 
