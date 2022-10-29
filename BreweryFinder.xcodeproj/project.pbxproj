@@ -24,6 +24,8 @@
 		88C1AB63290BA78A00844D51 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB62290BA78A00844D51 /* SearchService.swift */; };
 		88C1AB65290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB64290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift */; };
 		88C1AB69290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */; };
+		88C1AB6C290CFA1A00844D51 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB6B290CFA1A00844D51 /* LocationService.swift */; };
+		88C1AB6E290CFA2E00844D51 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB6D290CFA2E00844D51 /* SearchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		88C1AB62290BA78A00844D51 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		88C1AB64290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBreweryDBSearchServiceTests.swift; sourceTree = "<group>"; };
 		88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweriesViewModelTests.swift; sourceTree = "<group>"; };
+		88C1AB6B290CFA1A00844D51 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		88C1AB6D290CFA2E00844D51 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		889B199A290A2CFD009C8DCE /* BreweryFinderTests */ = {
 			isa = PBXGroup;
 			children = (
+				88C1AB6A290CFA0E00844D51 /* Test Doubles */,
 				88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */,
 				88C1AB64290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift */,
 				88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */,
@@ -149,6 +154,15 @@
 				88C1AB60290B9CD600844D51 /* NearbyBreweryCell.swift */,
 			);
 			path = "Nearby Breweries";
+			sourceTree = "<group>";
+		};
+		88C1AB6A290CFA0E00844D51 /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				88C1AB6B290CFA1A00844D51 /* LocationService.swift */,
+				88C1AB6D290CFA2E00844D51 /* SearchService.swift */,
+			);
+			path = "Test Doubles";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +287,8 @@
 			files = (
 				88C1AB65290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift in Sources */,
 				88C1AB54290A486A00844D51 /* MainNavigationControllerTests.swift in Sources */,
+				88C1AB6E290CFA2E00844D51 /* SearchService.swift in Sources */,
+				88C1AB6C290CFA1A00844D51 /* LocationService.swift in Sources */,
 				88C1AB69290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
