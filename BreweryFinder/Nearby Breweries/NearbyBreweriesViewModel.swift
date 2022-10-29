@@ -67,14 +67,22 @@ final class NearbyBreweriesViewModel: NSObject {
 
 extension NearbyBreweriesViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        numberOfRows(in: section)
+    }
+    
+    func numberOfRows(in section: Int) -> Int {
         breweries.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearbyBreweryCell", for: indexPath) as! NearbyBreweryCell
         
-        cell.nameLabel.text = breweries.value[indexPath.row].name
+        cell.nameLabel.text = label(row: indexPath.row)
         
         return cell
+    }
+    
+    func label(row: Int) -> String {
+        breweries.value[row].name
     }
 }

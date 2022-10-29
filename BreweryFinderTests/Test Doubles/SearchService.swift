@@ -11,17 +11,23 @@ class SpySearchService: SearchService {
 }
 
 struct StubSearchService: SearchService {
+    let breweries: [Brewery]
+    
     func breweriesNear(location: CLLocationCoordinate2D) async throws -> [Brewery] {
-        [.example1, .example2]
+        breweries
     }
 }
 
 extension Brewery {
     static var example1: Brewery {
-        Brewery(name: "Four Peaks Brewing Co", breweryType: "", street: nil, address2: nil, address3: nil, city: "", state: "", postalCode: "", country: "", longitude: "", latitude: "", phone: nil, websiteUrl: nil)
+        exampleBrewery(name: "Four Peaks Brewing Company")
     }
     
     static var example2: Brewery {
-        Brewery(name: "Fate Brewing Co", breweryType: "", street: nil, address2: nil, address3: nil, city: "", state: "", postalCode: "", country: "", longitude: "", latitude: "", phone: nil, websiteUrl: nil)
+        exampleBrewery(name: "Fate Brewing Co")
+    }
+    
+    static func exampleBrewery(name: String) -> Brewery {
+        Brewery(name: name, breweryType: "", street: nil, address2: nil, address3: nil, city: "", state: "", postalCode: "", country: "", longitude: "", latitude: "", phone: nil, websiteUrl: nil)
     }
 }

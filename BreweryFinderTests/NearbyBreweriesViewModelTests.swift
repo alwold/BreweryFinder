@@ -25,10 +25,10 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
     
     func test_appear_whenBreweriesUpdated_refreshesTable() async {
         let locationService = StubLocationService(location: CLLocationCoordinate2D(latitude: -112.123, longitude: 33.456))
-        let searchService = StubSearchService()
+        let searchService = StubSearchService(breweries: [.example1])
         let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
         
-        let expectation = expectation(description: "breweriesWerUpdated")
+        let expectation = expectation(description: "breweriesUpdated")
         
         var breweriesUpdatedReceivedEvent = false
         let cancellable = viewModel.breweriesUpdated.sink { _ in
@@ -42,5 +42,25 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
         
         XCTAssert(breweriesUpdatedReceivedEvent)
 
+    }
+    
+    func test_table_hasARowForEachBrewery() async {
+        let locationService = StubLocationService(location: CLLocationCoordinate2D(latitude: -112.123, longitude: 33.456))
+        let searchService = StubSearchService(breweries: [.example1, .example2])
+        let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
+        await viewModel.viewDidAppear()
+        
+        let rows = viewModel.numberOfRows(in: 0)
+        
+        XCTAssertEqual(rows, 2)
+    }
+    
+    func test_table_showsTheNameOfTheBrewery() async {
+        let locationService = StubLocationService(location: CLLocationCoordinate2D(latitude: -112.123, longitude: 33.456))
+        let searchService = StubSearchService(breweries: [.exampleBrewery(name: "Four Peaks"), .exampleBrewery(name: "Fate")])
+        let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
+        await viewModel.viewDidAppear()
+        
+        XCTAssertEqual(viewModel.label(row: 0), "Four Peaks")
     }
 }
