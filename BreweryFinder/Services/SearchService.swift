@@ -15,6 +15,12 @@ struct Brewery: Decodable {
     let latitude: String
     let phone: String?
     let websiteUrl: String?
+    
+    var coordinate: CLLocationCoordinate2D? {
+        guard let latitude = Double(latitude), let longitude = Double(longitude) else { return nil }
+        
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
 
 protocol SearchService {

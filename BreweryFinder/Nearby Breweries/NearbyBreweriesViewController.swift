@@ -26,6 +26,21 @@ final class NearbyBreweriesViewController: UIViewController {
             .sink { [nearbyBreweriesView] in
             nearbyBreweriesView.tableView.reloadData()
         }.store(in: &cancellables)
+        
+        viewModel.mapAnnotations
+            .receive(on: DispatchQueue.main)
+            .sink { [nearbyBreweriesView] annotations in
+                nearbyBreweriesView.mapView.removeAnnotations(nearbyBreweriesView.mapView.annotations)
+                nearbyBreweriesView.mapView.addAnnotations(annotations)
+            }
+            .store(in: &cancellables)
+        
+        viewModel.mapRegion
+            .receive(on: DispatchQueue.main)
+            .sink { [nearbyBreweriesView] region in
+                nearbyBreweriesView.mapView.setRegion(region, animated: true)
+            }
+            .store(in: &cancellables)
     }
     
     override func viewDidAppear(_ animated: Bool) {
