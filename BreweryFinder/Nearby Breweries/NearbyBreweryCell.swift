@@ -21,6 +21,8 @@ final class NearbyBreweryCell: UITableViewCell {
         boxView.layer.borderWidth = 1
                 
         nameLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+        nameLabel.numberOfLines = 0
+        nameLabel.lineBreakMode = .byWordWrapping
     }
     
     private func setConstraints() {
@@ -35,7 +37,8 @@ final class NearbyBreweryCell: UITableViewCell {
             
             nameLabel.centerXAnchor.constraint(equalTo: boxView.centerXAnchor),
             nameLabel.centerYAnchor.constraint(equalTo: boxView.centerYAnchor),
-            nameLabel.topAnchor.constraint(equalTo: boxView.topAnchor, constant: 30)
+            nameLabel.topAnchor.constraint(equalTo: boxView.topAnchor, constant: 30),
+            nameLabel.leadingAnchor.constraint(equalTo: boxView.leadingAnchor, constant: 16)
         ])
     }
     
@@ -51,7 +54,7 @@ struct NearbyBreweryCell_Preview: PreviewProvider {
     static var previews: some View {
         UIViewPreview {
             let cell = NearbyBreweryCell(style: .default, reuseIdentifier: nil)
-            cell.nameLabel.text = "Four Peaks Brewing Co"
+            cell.nameLabel.text = "Four Peaks Brewing Co and stuff like that"
             return cell
         }
         .frame(width: 360, height: 200)
