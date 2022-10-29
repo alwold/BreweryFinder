@@ -7,10 +7,12 @@ final class NearbyBreweriesViewModel: NSObject {
     private let locationService: LocationService
     private let searchService: SearchService
     private let breweries = CurrentValueSubject<[Brewery], Never>([])
-    private let breweriesUpdatedSubject = PassthroughSubject<Void, Never>()
 
     var breweriesUpdated: AnyPublisher<Void, Never> {
-        breweries.map { _ in }.eraseToAnyPublisher()
+        breweries
+            .dropFirst()
+            .map { _ in }
+            .eraseToAnyPublisher()
     }
     
     var mapAnnotations: AnyPublisher<[MKAnnotation], Never> {
@@ -43,9 +45,9 @@ final class NearbyBreweriesViewModel: NSObject {
         .eraseToAnyPublisher()
     }
     
-    init(locationService: LocationService) {
+    init(locationService: LocationService, searchService: SearchService = OpenBreweryDBSearchService()) {
         self.locationService = locationService
-        self.searchService = OpenBreweryDBSearchService()
+        self.searchService = searchService
     }
     
     func viewDidAppear() async {
@@ -55,8 +57,6 @@ final class NearbyBreweriesViewModel: NSObject {
             let location = try await locationService.getLocation()
             print("location: \(location)")
             breweries.send(try await searchService.breweriesNear(location: location))
-            print("breweries: \(breweries)")
-            breweriesUpdatedSubject.send()
         } catch {
             print("error: \(error)")
         }

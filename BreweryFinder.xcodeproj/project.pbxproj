@@ -23,6 +23,7 @@
 		88C1AB61290B9CD600844D51 /* NearbyBreweryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB60290B9CD600844D51 /* NearbyBreweryCell.swift */; };
 		88C1AB63290BA78A00844D51 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB62290BA78A00844D51 /* SearchService.swift */; };
 		88C1AB65290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB64290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift */; };
+		88C1AB69290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		88C1AB60290B9CD600844D51 /* NearbyBreweryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweryCell.swift; sourceTree = "<group>"; };
 		88C1AB62290BA78A00844D51 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		88C1AB64290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBreweryDBSearchServiceTests.swift; sourceTree = "<group>"; };
+		88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweriesViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */,
 				88C1AB64290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift */,
+				88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */,
 			);
 			path = BreweryFinderTests;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				88C1AB65290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift in Sources */,
 				88C1AB54290A486A00844D51 /* MainNavigationControllerTests.swift in Sources */,
+				88C1AB69290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
