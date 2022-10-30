@@ -30,6 +30,8 @@
 		88C1AB73290E1A1B00844D51 /* BreweryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */; };
 		88C1AB75290E205300844D51 /* BreweryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */; };
 		88C1AB77290E3C9400844D51 /* BreweryDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB76290E3C9400844D51 /* BreweryDetailViewModelTests.swift */; };
+		88C1AB7A290E4E4300844D51 /* UIColor+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB79290E4E4300844D51 /* UIColor+Style.swift */; };
+		88C1AB7C290E4E8800844D51 /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB7B290E4E8800844D51 /* UIFont+Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewController.swift; sourceTree = "<group>"; };
 		88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewModel.swift; sourceTree = "<group>"; };
 		88C1AB76290E3C9400844D51 /* BreweryDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewModelTests.swift; sourceTree = "<group>"; };
+		88C1AB79290E4E4300844D51 /* UIColor+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Style.swift"; sourceTree = "<group>"; };
+		88C1AB7B290E4E8800844D51 /* UIFont+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		889B1983290A2CFC009C8DCE /* BreweryFinder */ = {
 			isa = PBXGroup;
 			children = (
+				88C1AB78290E4E2B00844D51 /* Style */,
 				88C1AB6F290E154300844D51 /* Brewery Details */,
 				88C1AB59290B92FA00844D51 /* Nearby Breweries */,
 				88C1AB58290B92DE00844D51 /* Services */,
@@ -183,6 +188,15 @@
 				88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */,
 			);
 			path = "Brewery Details";
+			sourceTree = "<group>";
+		};
+		88C1AB78290E4E2B00844D51 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				88C1AB79290E4E4300844D51 /* UIColor+Style.swift */,
+				88C1AB7B290E4E8800844D51 /* UIFont+Style.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +307,12 @@
 				88C1AB5F290B972E00844D51 /* NearbyBreweriesViewModel.swift in Sources */,
 				889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */,
 				88C1AB5D290B96F300844D51 /* NearbyBreweriesViewController.swift in Sources */,
+				88C1AB7A290E4E4300844D51 /* UIColor+Style.swift in Sources */,
 				88C1AB61290B9CD600844D51 /* NearbyBreweryCell.swift in Sources */,
 				889B19BB290A2FC1009C8DCE /* MainNavigationController.swift in Sources */,
 				88C1AB75290E205300844D51 /* BreweryDetailViewModel.swift in Sources */,
 				88C1AB63290BA78A00844D51 /* SearchService.swift in Sources */,
+				88C1AB7C290E4E8800844D51 /* UIFont+Style.swift in Sources */,
 				88C1AB73290E1A1B00844D51 /* BreweryDetailViewController.swift in Sources */,
 				889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */,
 				889B19B9290A2F9D009C8DCE /* HomeViewController.swift in Sources */,

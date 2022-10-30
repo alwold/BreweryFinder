@@ -2,34 +2,41 @@ import UIKit
 
 final class HomeView: UIView {
     let backgroundImage = UIImageView()
-    
     let titleLabel = UILabel()
-    
+    let hintLabel = UILabel()
     let findByLocationButton = UIButton()
     
     init() {
         super.init(frame: .zero)
-        backgroundImage.image = blur(image: UIImage(named: "background")!)
+        backgroundImage.image = UIImage(named: "background")
         backgroundColor = .white
         backgroundImage.contentMode = .scaleAspectFill
         addSubview(backgroundImage)
         addSubview(titleLabel)
+        addSubview(hintLabel)
         addSubview(findByLocationButton)
         
         setConstraints()
 
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        titleLabel.font = .largeTitle
         titleLabel.text = "Brewery Finder"
-        titleLabel.textColor = .orange
+        titleLabel.textColor = .homeText
+        
+        hintLabel.text = "Tap the button below to locate breweries near your current location."
+        hintLabel.numberOfLines = 0
+        hintLabel.lineBreakMode = .byWordWrapping
+        hintLabel.textAlignment = .center
+        hintLabel.textColor = .homeText
     }
         
     private func setConstraints() {
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        hintLabel.translatesAutoresizingMaskIntoConstraints = false
         findByLocationButton.translatesAutoresizingMaskIntoConstraints = false
         
         findByLocationButton.setImage(UIImage(systemName: "location.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 64, weight: .bold, scale: .large)), for: .normal)
-        findByLocationButton.tintColor = .orange
+        findByLocationButton.tintColor = .white
 
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: topAnchor),
@@ -38,23 +45,15 @@ final class HomeView: UIView {
             backgroundImage.rightAnchor.constraint(equalTo: rightAnchor),
             
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 64),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 24),
+            
+            hintLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            hintLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
+            hintLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             
             findByLocationButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             findByLocationButton.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
-    }
-    
-    func blur(image: UIImage) -> UIImage {
-        let context = CIContext(options: nil)
-        let blurFilter = CIFilter(name: "CIGaussianBlur")
-        let beginImage = CIImage(image: image)
-        blurFilter!.setValue(beginImage, forKey: kCIInputImageKey)
-        blurFilter!.setValue(30, forKey: kCIInputRadiusKey)
-        
-        let output = blurFilter!.outputImage
-        let cgImage = context.createCGImage(output!, from: output!.extent)
-        return UIImage(cgImage: cgImage!)
     }
     
     required init?(coder: NSCoder) {
