@@ -4,14 +4,16 @@ import UIKit
 final class NearbyBreweriesView: UIView {
     let mapView = MKMapView()
     let tableView = UITableView()
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     init() {
         super.init(frame: .zero)
         
         backgroundColor = .white
         
-        addSubview(mapView)
         addSubview(tableView)
+        addSubview(mapView)
+        addSubview(activityIndicator)
         
         setConstraints()
         
@@ -19,11 +21,14 @@ final class NearbyBreweriesView: UIView {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
+        
+        activityIndicator.startAnimating()
     }
     
     private func setConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: topAnchor),
@@ -31,10 +36,13 @@ final class NearbyBreweriesView: UIView {
             mapView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mapView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35),
             
-            tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 10),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
         ])
     }
 

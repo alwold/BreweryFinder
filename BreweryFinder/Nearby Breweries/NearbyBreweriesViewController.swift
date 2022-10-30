@@ -47,6 +47,12 @@ final class NearbyBreweriesViewController: UIViewController {
                 nearbyBreweriesView.mapView.setRegion(region, animated: true)
             }
             .store(in: &cancellables)
+        
+        viewModel.showActivityIndicator
+            .map { !$0 } // invert boolean from shown to hidden, since UIView needs us to set isHidden
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isHidden, on: nearbyBreweriesView.activityIndicator)
+            .store(in: &cancellables)
     }
     
     override func viewDidAppear(_ animated: Bool) {

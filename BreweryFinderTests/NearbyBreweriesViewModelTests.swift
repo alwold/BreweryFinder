@@ -116,4 +116,48 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
         XCTAssertEqual(receivedMapRegion.span.latitudeDelta, 1, accuracy: 0.1)
         XCTAssertEqual(receivedMapRegion.span.longitudeDelta, 1, accuracy: 0.1)
     }
+    
+    func test_activityIndicator_whenDataIsLoading_isShown() async {
+        let locationService = StubLocationService(location: CLLocationCoordinate2D(latitude: -112.123, longitude: 33.456))
+        let searchService = StubSearchService(breweries: [.example1])
+        let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
+
+        let expectation = expectation(description: "wait for activity indicator")
+        var receivedShowActivityIndicator: Bool?
+        let cancellable = viewModel.showActivityIndicator
+            .dropFirst().first() // ignore the initial value, which is set to false, then wait for just the first event
+            .sink { showActivityIndicator in
+                receivedShowActivityIndicator = showActivityIndicator
+                expectation.fulfill()
+            }
+        
+        await viewModel.viewDidAppear()
+        
+        await waitForExpectations(timeout: 1)
+        
+        XCTAssertEqual(receivedShowActivityIndicator, true)
+    }
+    
+    func test_activityIndicator_whenDataIsLoaded_isHidden() async {
+        let locationService = StubLocationService(location: CLLocationCoordinate2D(latitude: -112.123, longitude: 33.456))
+        let searchService = StubSearchService(breweries: [.example1])
+        let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
+
+        let expectation = expectation(description: "wait for activity indicator")
+        var receivedShowActivityIndicator: Bool?
+        let cancellable = viewModel.showActivityIndicator
+            .dropFirst(2) // initial value should be false, then we should get a true when loading starts (drop those two)
+            .first() // then finally a false when loading is done, which is what we are checking for
+            .sink { showActivityIndicator in
+                receivedShowActivityIndicator = showActivityIndicator
+                expectation.fulfill()
+            }
+        
+        await viewModel.viewDidAppear()
+        
+        await waitForExpectations(timeout: 1)
+        
+        XCTAssertEqual(receivedShowActivityIndicator, false)
+
+    }
 }

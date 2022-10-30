@@ -7,6 +7,7 @@ final class NearbyBreweriesViewModel: NSObject {
     private let locationService: LocationService
     private let searchService: SearchService
     private let breweries = CurrentValueSubject<[Brewery], Never>([])
+    private let showActivityIndicatorSubject = CurrentValueSubject<Bool, Never>(false)
 
     var breweriesUpdated: AnyPublisher<Void, Never> {
         breweries
@@ -47,23 +48,25 @@ final class NearbyBreweriesViewModel: NSObject {
         .eraseToAnyPublisher()
     }
     
+    var showActivityIndicator: AnyPublisher<Bool, Never> {
+        showActivityIndicatorSubject.eraseToAnyPublisher()
+    }
+    
     init(locationService: LocationService, searchService: SearchService = OpenBreweryDBSearchService()) {
         self.locationService = locationService
         self.searchService = searchService
     }
     
     func viewDidAppear() async {
-        // TODO show activity indicator
+        showActivityIndicatorSubject.send(true)
         do {
-            print("getting location")
             let location = try await locationService.getLocation()
-            print("location: \(location)")
             breweries.send(try await searchService.breweriesNear(location: location))
+            showActivityIndicatorSubject.send(false)
         } catch {
-            print("error: \(error)")
+            print("error: \(error)") // TODO handle error
+            showActivityIndicatorSubject.send(false)
         }
-        // TODO look up breweries
-        // TODO hide activity indicator
     }
     
     func brewery(at index: Int) -> Brewery {
