@@ -19,14 +19,12 @@ final class MainNavigationController: UINavigationController {
 
 // MARK: - HomeViewControllerDelegate
 extension MainNavigationController: HomeViewControllerDelegate {
-    func findByLocationButtonTapped() {
+    func findByLocationButtonTapped() async {
         let authorizationStatus = locationService.authorizationStatus
         if authorizationStatus == .notDetermined {
-            Task {
-                let authorizationStatus = await locationService.requestWhenInUseAuthorization()
+            let authorizationStatus = await locationService.requestWhenInUseAuthorization()
 
-                handle(authorizationStatus: authorizationStatus)
-            }
+            handle(authorizationStatus: authorizationStatus)
         } else {
             handle(authorizationStatus: authorizationStatus)
         }

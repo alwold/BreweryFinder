@@ -6,11 +6,11 @@ class MainNavigationControllerTests: XCTestCase {
     // the three part test naming used in these tests is based on Jon Reid's suggested convention:
     // https://qualitycoding.org/unit-test-naming/
 
-    func test_findMyLocationButton_whenAuthorizationStatusNotDetermined_promptsForLocationPermission() {
+    func test_findMyLocationButton_whenAuthorizationStatusNotDetermined_promptsForLocationPermission() async {
         let locationService = MockLocationService()
-        let sut = MainNavigationController(locationService: locationService)
+        let sut = await MainNavigationController(locationService: locationService)
         
-        sut.findByLocationButtonTapped()
+        await sut.findByLocationButtonTapped()
         
         print("checking if permission requested")
         XCTAssertTrue(locationService.permissionWasRequested)

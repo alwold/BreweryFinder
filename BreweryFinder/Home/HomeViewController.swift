@@ -1,7 +1,7 @@
 import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject {
-    func findByLocationButtonTapped()
+    func findByLocationButtonTapped() async
 }
 
 final class HomeViewController: UIViewController {
@@ -19,7 +19,9 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeView.findByLocationButton.addAction(
             UIAction { [weak delegate] _ in
-                delegate?.findByLocationButtonTapped()
+                Task { [weak delegate] in
+                    await delegate?.findByLocationButtonTapped()
+                }
             },
             for: .touchUpInside
         )
