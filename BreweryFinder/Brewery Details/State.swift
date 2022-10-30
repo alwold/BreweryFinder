@@ -1,5 +1,54 @@
 enum State: String {
-    case alabama, alaska, arizona, arkansas, california, colorado, connecticut, delaware, florida, georgia, hawaii, idaho, illinois, indiana, iowa, kansas, kentucky, louisiana, maine, maryland, massachusetts, michigan, minnesota, mississippi, missouri, montana, nebraska, nevada, newHampshire, newJersey, newMexico, newYork, northCarolina, northDakota, ohio, oklahoma, oregon, pennsylvania, rhodeIsland, southCarolina, southDakota, tennessee, texas, utah, vermont, virginia, washington, westVirginia, wisconsin, wyoming
+    case alabama = "Alabama"
+    case alaska = "Alaska"
+    case arizona = "Arizona"
+    case arkansas = "Arkansas"
+    case california = "California"
+    case colorado = "Colorado"
+    case connecticut = "Connecticut"
+    case delaware = "Delaware"
+    case florida = "Florida"
+    case georgia = "Georgia"
+    case hawaii = "Hawaii"
+    case idaho = "Idaho"
+    case illinois = "Illinois"
+    case indiana = "Indiana"
+    case iowa = "Iowa"
+    case kansas = "Kansas"
+    case kentucky = "Kentucky"
+    case louisiana = "Louisiana"
+    case maine = "Maine"
+    case maryland = "Maryland"
+    case massachusetts = "Massachusetts"
+    case michigan = "Michigan"
+    case minnesota = "Minnesota"
+    case mississippi = "Mississippi"
+    case missouri = "Missouri"
+    case montana = "Montana"
+    case nebraska = "Nebraska"
+    case nevada = "Nevada"
+    case newHampshire = "New Hampshire"
+    case newJersey = "New Jersey"
+    case newMexico = "New Mexico"
+    case newYork = "New York"
+    case northCarolina = "North Carolina"
+    case northDakota = "North Dakota"
+    case ohio = "Ohio"
+    case oklahoma = "Oklahoma"
+    case oregon = "Oregon"
+    case pennsylvania = "Pennsylvania"
+    case rhodeIsland = "RhodeIsland"
+    case southCarolina = "SouthCarolina"
+    case southDakota = "SouthDakota"
+    case tennessee = "Tennessee"
+    case texas = "Texas"
+    case utah = "Utah"
+    case vermont = "Vermont"
+    case virginia = "Virginia"
+    case washington = "Washington"
+    case westVirginia = "West Virginia"
+    case wisconsin = "Wisconsin"
+    case wyoming = "Wyoming"
     
     var abbreviation: String {
         switch self {
@@ -107,6 +156,6 @@ enum State: String {
     }
     
     init?(name: String) {
-        self.init(rawValue: name.lowercased())
+        self.init(rawValue: name)
     }
 }

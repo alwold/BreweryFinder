@@ -2,12 +2,12 @@
 import XCTest
 
 final class BreweryDetailViewModelTests: XCTestCase {
-    func test_address_isFormattedCorrectly() {
-        let viewModel = BreweryDetailViewModel(brewery: .exampleBrewery(name: "Test", street: "123 Fake Street", address2: "Suite 2", address3: "In the back", city: "Whoville", state: "Nowhere", postalCode: "12345"))
+    func test_address_isFormattedCorrectlyAndAbbreviatesStateAndZip() {
+        let viewModel = BreweryDetailViewModel(brewery: .exampleBrewery(name: "Test", street: "123 Fake Street", address2: "Suite 2", address3: "In the back", city: "Whoville", state: "New Jersey", postalCode: "12345-7890"))
         
         let address = viewModel.address
         
-        XCTAssertEqual(address, "123 Fake Street\nSuite 2\nIn the back\nWhoville, Nowhere 12345")
+        XCTAssertEqual(address, "123 Fake Street\nSuite 2\nIn the back\nWhoville, NJ 12345")
     }
     
     func test_phone_isFormattedCorrectly() {
