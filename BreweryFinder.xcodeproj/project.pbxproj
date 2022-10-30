@@ -29,6 +29,7 @@
 		88C1AB71290E154F00844D51 /* BreweryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB70290E154F00844D51 /* BreweryDetailView.swift */; };
 		88C1AB73290E1A1B00844D51 /* BreweryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */; };
 		88C1AB75290E205300844D51 /* BreweryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */; };
+		88C1AB77290E3C9400844D51 /* BreweryDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB76290E3C9400844D51 /* BreweryDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		88C1AB70290E154F00844D51 /* BreweryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailView.swift; sourceTree = "<group>"; };
 		88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewController.swift; sourceTree = "<group>"; };
 		88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewModel.swift; sourceTree = "<group>"; };
+		88C1AB76290E3C9400844D51 /* BreweryDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				88C1AB53290A486A00844D51 /* MainNavigationControllerTests.swift */,
 				88C1AB64290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift */,
 				88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */,
+				88C1AB76290E3C9400844D51 /* BreweryDetailViewModelTests.swift */,
 			);
 			path = BreweryFinderTests;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				88C1AB65290BA82900844D51 /* OpenBreweryDBSearchServiceTests.swift in Sources */,
 				88C1AB54290A486A00844D51 /* MainNavigationControllerTests.swift in Sources */,
+				88C1AB77290E3C9400844D51 /* BreweryDetailViewModelTests.swift in Sources */,
 				88C1AB6E290CFA2E00844D51 /* SearchService.swift in Sources */,
 				88C1AB6C290CFA1A00844D51 /* LocationService.swift in Sources */,
 				88C1AB69290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift in Sources */,

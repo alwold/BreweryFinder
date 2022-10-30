@@ -27,7 +27,7 @@ extension Brewery {
         exampleBrewery(name: "Fate Brewing Co")
     }
     
-    static func exampleBrewery(name: String, latitude: String = "", longitude: String = "") -> Brewery {
-        Brewery(name: name, breweryType: "", street: nil, address2: nil, address3: nil, city: "", state: "", postalCode: "", country: "", longitude: longitude, latitude: latitude, phone: nil, websiteUrl: nil)
+    static func exampleBrewery(name: String, latitude: String = "", longitude: String = "", phone: String? = nil) -> Brewery {
+        Brewery(name: name, breweryType: "", street: nil, address2: nil, address3: nil, city: "", state: "", postalCode: "", country: "", longitude: longitude, latitude: latitude, phone: phone, websiteUrl: nil)
     }
 }
