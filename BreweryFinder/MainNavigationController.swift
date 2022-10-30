@@ -62,6 +62,10 @@ extension MainNavigationController: NearbyBreweriesViewControllerDelegate {
         viewController.delegate = self
         pushViewController(viewController, animated: true)
     }
+    
+    func cancelButtonTapped() {
+        popViewController(animated: true)
+    }
 }
 
 // MARK: - BreweryDetailViewControllerDelegate

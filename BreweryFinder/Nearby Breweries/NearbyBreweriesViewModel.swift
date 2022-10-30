@@ -8,6 +8,7 @@ final class NearbyBreweriesViewModel: NSObject {
     private let searchService: SearchService
     private let breweries = CurrentValueSubject<[Brewery], Never>([])
     private let showActivityIndicatorSubject = CurrentValueSubject<Bool, Never>(false)
+    private let errorSubject = PassthroughSubject<String, Never>()
 
     var breweriesUpdated: AnyPublisher<Void, Never> {
         breweries
@@ -52,19 +53,28 @@ final class NearbyBreweriesViewModel: NSObject {
         showActivityIndicatorSubject.eraseToAnyPublisher()
     }
     
+    var error: AnyPublisher<String, Never> {
+        errorSubject.eraseToAnyPublisher()
+    }
+    
     init(locationService: LocationService, searchService: SearchService = OpenBreweryDBSearchService()) {
         self.locationService = locationService
         self.searchService = searchService
     }
     
     func viewDidAppear() async {
+        await findBreweries()
+    }
+    
+    func findBreweries() async {
         showActivityIndicatorSubject.send(true)
         do {
             let location = try await locationService.getLocation()
             breweries.send(try await searchService.breweriesNear(location: location))
             showActivityIndicatorSubject.send(false)
         } catch {
-            print("error: \(error)") // TODO handle error
+            self.errorSubject.send("We're sorry, we were unable to locate the nearby breweries. We may be able to find them if you try again.")
+            print("error loading breweries: \(error)")
             showActivityIndicatorSubject.send(false)
         }
     }

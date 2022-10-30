@@ -3,6 +3,7 @@ import UIKit
 
 protocol NearbyBreweriesViewControllerDelegate: AnyObject {
     func breweryTapped(brewery: Brewery)
+    func cancelButtonTapped()
 }
 
 final class NearbyBreweriesViewController: UIViewController {
@@ -52,6 +53,22 @@ final class NearbyBreweriesViewController: UIViewController {
             .map { !$0 } // invert boolean from shown to hidden, since UIView needs us to set isHidden
             .receive(on: DispatchQueue.main)
             .assign(to: \.isHidden, on: nearbyBreweriesView.activityIndicator)
+            .store(in: &cancellables)
+        
+        viewModel.error
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] errorMessage in
+                let alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
+                    Task { [weak self] in
+                        await self?.viewModel.findBreweries()
+                    }
+                })
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+                    self?.delegate?.cancelButtonTapped()
+                })
+                self?.present(alert, animated: true)
+            }
             .store(in: &cancellables)
     }
     
