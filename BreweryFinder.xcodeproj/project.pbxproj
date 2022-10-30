@@ -26,6 +26,7 @@
 		88C1AB69290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */; };
 		88C1AB6C290CFA1A00844D51 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB6B290CFA1A00844D51 /* LocationService.swift */; };
 		88C1AB6E290CFA2E00844D51 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB6D290CFA2E00844D51 /* SearchService.swift */; };
+		88C1AB71290E154F00844D51 /* BreweryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB70290E154F00844D51 /* BreweryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		88C1AB68290CEE7E00844D51 /* NearbyBreweriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBreweriesViewModelTests.swift; sourceTree = "<group>"; };
 		88C1AB6B290CFA1A00844D51 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		88C1AB6D290CFA2E00844D51 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		88C1AB70290E154F00844D51 /* BreweryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		889B1983290A2CFC009C8DCE /* BreweryFinder */ = {
 			isa = PBXGroup;
 			children = (
+				88C1AB6F290E154300844D51 /* Brewery Details */,
 				88C1AB59290B92FA00844D51 /* Nearby Breweries */,
 				88C1AB58290B92DE00844D51 /* Services */,
 				88C1AB57290B92C400844D51 /* Home */,
@@ -163,6 +166,14 @@
 				88C1AB6D290CFA2E00844D51 /* SearchService.swift */,
 			);
 			path = "Test Doubles";
+			sourceTree = "<group>";
+		};
+		88C1AB6F290E154300844D51 /* Brewery Details */ = {
+			isa = PBXGroup;
+			children = (
+				88C1AB70290E154F00844D51 /* BreweryDetailView.swift */,
+			);
+			path = "Brewery Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				88C1AB63290BA78A00844D51 /* SearchService.swift in Sources */,
 				889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */,
 				889B19B9290A2F9D009C8DCE /* HomeViewController.swift in Sources */,
+				88C1AB71290E154F00844D51 /* BreweryDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
