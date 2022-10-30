@@ -45,10 +45,22 @@ extension MainNavigationController: HomeViewControllerDelegate {
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
             present(alert, animated: true)
-        case .restricted, .notDetermined:
-            // unrecoverable
-            print("show error")
+        case .restricted:
+            showAlert(message: "We aren't able to determine your location because your device doesn't support location or it has been restricted.")
+        case .notDetermined:
+            // this case should in theory never happen, because we prompt for access before we get here
+            showAlert(message: "There was an unexpected error determining your location.")
+        @unknown default:
+            // Handle future states. It might be good to actually try getting a location if we hit
+            // this case, because Apple could add more "allowed" states later.
+            showAlert(message: "There was an unexpected error determining your location.")
         }
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Unable to use location services", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
 
     }
 }
