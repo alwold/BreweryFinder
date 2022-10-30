@@ -22,6 +22,11 @@ final class NearbyBreweriesView: UIView {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         
+        mapView.layer.shadowColor = UIColor.black.cgColor
+        mapView.layer.shadowOpacity = 1
+        mapView.layer.shadowOffset = .zero
+        mapView.layer.shadowRadius = 3
+        mapView.layer.masksToBounds = false
         mapView.showsUserLocation = true
         
         activityIndicator.startAnimating()
@@ -38,7 +43,7 @@ final class NearbyBreweriesView: UIView {
             mapView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mapView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35),
             
-            tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
