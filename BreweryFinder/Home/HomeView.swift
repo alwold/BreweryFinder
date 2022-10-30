@@ -1,7 +1,7 @@
 import UIKit
 
 final class HomeView: UIView {
-    let backgroundImage = UIImageView(image: UIImage(named: "background"))
+    let backgroundImage = UIImageView()
     
     let titleLabel = UILabel()
     
@@ -9,6 +9,7 @@ final class HomeView: UIView {
     
     init() {
         super.init(frame: .zero)
+        backgroundImage.image = blur(image: UIImage(named: "background")!)
         backgroundColor = .white
         backgroundImage.contentMode = .scaleAspectFill
         addSubview(backgroundImage)
@@ -42,6 +43,18 @@ final class HomeView: UIView {
             findByLocationButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             findByLocationButton.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
+    }
+    
+    func blur(image: UIImage) -> UIImage {
+        let context = CIContext(options: nil)
+        let blurFilter = CIFilter(name: "CIGaussianBlur")
+        let beginImage = CIImage(image: image)
+        blurFilter!.setValue(beginImage, forKey: kCIInputImageKey)
+        blurFilter!.setValue(30, forKey: kCIInputRadiusKey)
+        
+        let output = blurFilter!.outputImage
+        let cgImage = context.createCGImage(output!, from: output!.extent)
+        return UIImage(cgImage: cgImage!)
     }
     
     required init?(coder: NSCoder) {
