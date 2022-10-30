@@ -6,6 +6,7 @@ final class BreweryDetailViewModel {
     let mapAnnotation: MKAnnotation?
     let phone: String?
     let websiteUrl: URL?
+    weak var delegate: BreweryDetailViewControllerDelegate?
     
     init(brewery: Brewery) {
         self.brewery = brewery
@@ -35,6 +36,18 @@ final class BreweryDetailViewModel {
             return MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         } else {
             return nil
+        }
+    }
+    
+    func phoneButtonTapped() {
+        if let phone = brewery.phone, let url = URL(string: "tel:\(phone)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func websiteButtonTapped() {
+        if let urlString = brewery.websiteUrl, let url = URL(string: urlString) {
+            delegate?.websiteButtonTapped(for: url)
         }
     }
 }

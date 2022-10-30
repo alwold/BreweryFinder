@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import SafariServices
 
 final class MainNavigationController: UINavigationController {
     private let homeViewController = HomeViewController()
@@ -58,6 +59,15 @@ extension MainNavigationController: HomeViewControllerDelegate {
 extension MainNavigationController: NearbyBreweriesViewControllerDelegate {
     func breweryTapped(brewery: Brewery) {
         let viewController = BreweryDetailViewController(brewery: brewery)
+        viewController.delegate = self
         pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - BreweryDetailViewControllerDelegate
+extension MainNavigationController: BreweryDetailViewControllerDelegate {
+    func websiteButtonTapped(for url: URL) {
+        let viewController = SFSafariViewController(url: url)
+        present(viewController, animated: true)
     }
 }

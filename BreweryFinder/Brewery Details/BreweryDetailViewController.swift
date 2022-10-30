@@ -1,7 +1,20 @@
 import UIKit
 
+protocol BreweryDetailViewControllerDelegate: AnyObject {
+    func websiteButtonTapped(for: URL)
+}
+
 final class BreweryDetailViewController: UIViewController {
     private let viewModel: BreweryDetailViewModel
+    
+    weak var delegate: BreweryDetailViewControllerDelegate? {
+        get {
+            viewModel.delegate
+        }
+        set {
+            viewModel.delegate = newValue
+        }
+    }
     
     init(brewery: Brewery) {
         self.viewModel = BreweryDetailViewModel(brewery: brewery)
@@ -36,6 +49,13 @@ final class BreweryDetailViewController: UIViewController {
         if let mapRegion = viewModel.mapRegion {
             breweryDetailView.mapView.setRegion(mapRegion, animated: false)
         }
+        
+        breweryDetailView.phoneButton.addAction(UIAction { [viewModel] _ in
+            viewModel.phoneButtonTapped()
+        }, for: .touchUpInside)
+        breweryDetailView.websiteButton.addAction(UIAction { [viewModel] _ in
+            viewModel.websiteButtonTapped()
+        }, for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
