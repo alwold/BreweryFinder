@@ -40,7 +40,7 @@ final class BreweryDetailView: UIView {
         websiteButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            nameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             

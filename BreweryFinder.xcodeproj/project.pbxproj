@@ -28,6 +28,7 @@
 		88C1AB6E290CFA2E00844D51 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB6D290CFA2E00844D51 /* SearchService.swift */; };
 		88C1AB71290E154F00844D51 /* BreweryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB70290E154F00844D51 /* BreweryDetailView.swift */; };
 		88C1AB73290E1A1B00844D51 /* BreweryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */; };
+		88C1AB75290E205300844D51 /* BreweryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		88C1AB6D290CFA2E00844D51 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		88C1AB70290E154F00844D51 /* BreweryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailView.swift; sourceTree = "<group>"; };
 		88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewController.swift; sourceTree = "<group>"; };
+		88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				88C1AB70290E154F00844D51 /* BreweryDetailView.swift */,
 				88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */,
+				88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */,
 			);
 			path = "Brewery Details";
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				88C1AB5D290B96F300844D51 /* NearbyBreweriesViewController.swift in Sources */,
 				88C1AB61290B9CD600844D51 /* NearbyBreweryCell.swift in Sources */,
 				889B19BB290A2FC1009C8DCE /* MainNavigationController.swift in Sources */,
+				88C1AB75290E205300844D51 /* BreweryDetailViewModel.swift in Sources */,
 				88C1AB63290BA78A00844D51 /* SearchService.swift in Sources */,
 				88C1AB73290E1A1B00844D51 /* BreweryDetailViewController.swift in Sources */,
 				889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */,
