@@ -65,6 +65,10 @@ final class NearbyBreweriesViewModel: NSObject {
         // TODO look up breweries
         // TODO hide activity indicator
     }
+    
+    func brewery(at index: Int) -> Brewery {
+        breweries.value[index]
+    }
 }
 
 extension NearbyBreweriesViewModel: UITableViewDataSource {

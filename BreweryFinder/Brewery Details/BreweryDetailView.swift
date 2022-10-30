@@ -18,6 +18,8 @@ final class BreweryDetailView: UIView {
         
         setConstraints()
         
+        backgroundColor = .white
+        
         nameLabel.textAlignment = .center
         nameLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         nameLabel.numberOfLines = 0

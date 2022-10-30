@@ -1,9 +1,14 @@
 import Combine
 import UIKit
 
+protocol NearbyBreweriesViewControllerDelegate: AnyObject {
+    func breweryTapped(brewery: Brewery)
+}
+
 final class NearbyBreweriesViewController: UIViewController {
     private let viewModel: NearbyBreweriesViewModel
     private var cancellables: Set<AnyCancellable> = []
+    weak var delegate: NearbyBreweriesViewControllerDelegate?
     
     var nearbyBreweriesView: NearbyBreweriesView {
         view as! NearbyBreweriesView
@@ -21,6 +26,7 @@ final class NearbyBreweriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nearbyBreweriesView.tableView.dataSource = viewModel
+        nearbyBreweriesView.tableView.delegate = self
         viewModel.breweriesUpdated
             .receive(on: DispatchQueue.main)
             .sink { [nearbyBreweriesView] in
@@ -52,5 +58,11 @@ final class NearbyBreweriesViewController: UIViewController {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension NearbyBreweriesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.breweryTapped(brewery: viewModel.brewery(at: indexPath.row))
     }
 }

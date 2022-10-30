@@ -35,6 +35,7 @@ extension MainNavigationController: HomeViewControllerDelegate {
         switch authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
             let viewController = NearbyBreweriesViewController(locationService: locationService)
+            viewController.delegate = self
             pushViewController(viewController, animated: true)
         case .denied:
             let alert = UIAlertController(title: "Location access disabled", message: "It looks like location access has been disabled. If you'd like to find breweries, you'll need to enable it in settings.", preferredStyle: .alert)
@@ -50,5 +51,13 @@ extension MainNavigationController: HomeViewControllerDelegate {
             print("show error")
         }
 
+    }
+}
+
+// MARK: - NearbyBreweriesViewControllerDelegate
+extension MainNavigationController: NearbyBreweriesViewControllerDelegate {
+    func breweryTapped(brewery: Brewery) {
+        let viewController = BreweryDetailViewController(brewery: brewery)
+        pushViewController(viewController, animated: true)
     }
 }
