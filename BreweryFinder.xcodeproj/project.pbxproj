@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		88081421290F15FE008A7314 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		88081423290F29E7008A7314 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		889B1981290A2CFC009C8DCE /* BreweryFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreweryFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889B1984290A2CFC009C8DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889B1986290A2CFC009C8DCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		889B1978290A2CFC009C8DCE = {
 			isa = PBXGroup;
 			children = (
+				88081423290F29E7008A7314 /* README.md */,
 				889B1983290A2CFC009C8DCE /* BreweryFinder */,
 				889B199A290A2CFD009C8DCE /* BreweryFinderTests */,
 				889B1982290A2CFC009C8DCE /* Products */,

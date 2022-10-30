@@ -59,10 +59,6 @@ final class OpenBreweryDBSearchServiceTests: XCTestCase {
     // TODO non-200 response codes?
 }
 
-
-// The test doubles below loosely follow the nomenclature outlined here:
-// https://martinfowler.com/bliki/TestDouble.html
-
 final class SpyURLSession: URLSessionProtocol {
     var receivedRequest: URLRequest?
     

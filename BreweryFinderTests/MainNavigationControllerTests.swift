@@ -23,9 +23,6 @@ class SpyMainNavigationController: MainNavigationController {
 }
 
 class MainNavigationControllerTests: XCTestCase {
-    // the three part test naming used in these tests is based on Jon Reid's suggested convention:
-    // https://qualitycoding.org/unit-test-naming/
-
     func test_findBreweriesButton_whenAuthorizationStatusNotDetermined_promptsForLocationPermission() async {
         let locationService = SpyLocationService()
         let sut = await MainNavigationController(locationService: locationService)
