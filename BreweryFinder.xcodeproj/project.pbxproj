@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88081422290F15FE008A7314 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88081421290F15FE008A7314 /* State.swift */; };
 		889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B1984290A2CFC009C8DCE /* AppDelegate.swift */; };
 		889B1987290A2CFC009C8DCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B1986290A2CFC009C8DCE /* SceneDelegate.swift */; };
 		889B198E290A2CFD009C8DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889B198D290A2CFD009C8DCE /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88081421290F15FE008A7314 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		889B1981290A2CFC009C8DCE /* BreweryFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreweryFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889B1984290A2CFC009C8DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889B1986290A2CFC009C8DCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				88C1AB70290E154F00844D51 /* BreweryDetailView.swift */,
 				88C1AB72290E1A1B00844D51 /* BreweryDetailViewController.swift */,
 				88C1AB74290E205300844D51 /* BreweryDetailViewModel.swift */,
+				88081421290F15FE008A7314 /* State.swift */,
 			);
 			path = "Brewery Details";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				889B19B7290A2ED0009C8DCE /* UIViewPreview.swift in Sources */,
 				889B19B5290A2DC7009C8DCE /* HomeView.swift in Sources */,
 				88C1AB5F290B972E00844D51 /* NearbyBreweriesViewModel.swift in Sources */,
+				88081422290F15FE008A7314 /* State.swift in Sources */,
 				889B1985290A2CFC009C8DCE /* AppDelegate.swift in Sources */,
 				88C1AB5D290B96F300844D51 /* NearbyBreweriesViewController.swift in Sources */,
 				88C1AB7A290E4E4300844D51 /* UIColor+Style.swift in Sources */,

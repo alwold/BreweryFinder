@@ -25,8 +25,26 @@ final class BreweryDetailViewModel {
     var address: String {
         var address = [brewery.street, brewery.address2, brewery.address3]
             .compactMap { $0 }.joined(separator: "\n")
-        address.append("\n\(brewery.city), \(brewery.state) \(brewery.postalCode)")
+        address.append("\n\(brewery.city), \(abbreviation(state: brewery.state)) \(zip5(from: brewery.postalCode))")
         return address
+    }
+    
+    /// Remove +4 from end of zip, so the UI is less cluttered
+    private func zip5(from zip: String) -> String {
+        if zip.count > 5 {
+            return String(zip[zip.startIndex...zip.index(zip.startIndex, offsetBy: 4)])
+        } else {
+            return zip
+        }
+    }
+    
+    /// Abbreviate state name if it's a known state, otherwise leave it as is
+    private func abbreviation(state stateString: String) -> String {
+        if let state = State(name: stateString) {
+            return state.abbreviation
+        } else {
+            return stateString
+        }
     }
     
     var phone: String? {
