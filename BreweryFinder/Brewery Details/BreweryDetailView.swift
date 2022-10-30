@@ -30,6 +30,8 @@ final class BreweryDetailView: UIView {
         
         phoneButton.setTitleColor(.blue, for: .normal)
         websiteButton.setTitleColor(.blue, for: .normal)
+        
+        mapView.showsUserLocation = true
     }
     
     private func setConstraints() {

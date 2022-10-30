@@ -22,6 +22,8 @@ final class NearbyBreweriesView: UIView {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         
+        mapView.showsUserLocation = true
+        
         activityIndicator.startAnimating()
     }
     
