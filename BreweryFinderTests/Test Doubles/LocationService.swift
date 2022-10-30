@@ -2,8 +2,9 @@
 import CoreLocation
 
 class SpyLocationService: LocationService {
-    var authorizationStatus: CLAuthorizationStatus = .authorizedAlways
+    var authorizationStatus: CLAuthorizationStatus = .notDetermined
     var getLocationWasCalled = false
+    var permissionWasRequested = false
     
     func getLocation() async throws -> CLLocationCoordinate2D {
         getLocationWasCalled = true
@@ -11,13 +12,19 @@ class SpyLocationService: LocationService {
     }
     
     func requestWhenInUseAuthorization() async -> CLAuthorizationStatus {
-        return .authorizedAlways
+        permissionWasRequested = true
+        return .authorizedWhenInUse
     }
 }
 
 struct StubLocationService: LocationService {
-    let authorizationStatus: CLAuthorizationStatus = .authorizedAlways
+    let authorizationStatus: CLAuthorizationStatus
     let location: CLLocationCoordinate2D
+    
+    init(authorizationStatus: CLAuthorizationStatus = .authorizedAlways, location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 33, longitude: -112)) {
+        self.authorizationStatus = authorizationStatus
+        self.location = location
+    }
     
     func requestWhenInUseAuthorization() async -> CLAuthorizationStatus {
         .authorizedAlways

@@ -2,7 +2,7 @@ import UIKit
 import CoreLocation
 import SafariServices
 
-final class MainNavigationController: UINavigationController {
+class MainNavigationController: UINavigationController {
     private let homeViewController = HomeViewController()
     private let locationService: LocationService
     
