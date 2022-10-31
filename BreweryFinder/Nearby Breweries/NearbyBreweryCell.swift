@@ -16,6 +16,8 @@ final class NearbyBreweryCell: UITableViewCell {
         boxView.addSubview(chevron)
         
         setConstraints()
+        
+        backgroundColor = .white
 
         boxView.backgroundColor = .primary
         boxView.layer.shadowOffset = CGSize(width: 2, height: 2)

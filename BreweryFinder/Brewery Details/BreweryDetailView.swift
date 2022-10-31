@@ -26,6 +26,7 @@ final class BreweryDetailView: UIView {
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
         
+        addressLabel.textColor = .black
         addressLabel.numberOfLines = 0
         addressLabel.lineBreakMode = .byWordWrapping
         

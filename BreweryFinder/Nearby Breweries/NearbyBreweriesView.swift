@@ -21,6 +21,7 @@ final class NearbyBreweriesView: UIView {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
         
         mapView.layer.shadowColor = UIColor.black.cgColor
         mapView.layer.shadowOpacity = 1
