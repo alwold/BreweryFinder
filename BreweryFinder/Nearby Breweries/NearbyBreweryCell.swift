@@ -1,7 +1,6 @@
 import UIKit
 
 final class NearbyBreweryCell: UITableViewCell {
-    let iconView = UIImageView(image: UIImage(systemName: "wineglass", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .regular, scale: .large)))
     let boxView = UIView()
     let nameLabel = UILabel()
     let typeLabel = UILabel()
@@ -11,7 +10,6 @@ final class NearbyBreweryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(boxView)
-        boxView.addSubview(iconView)
         boxView.addSubview(nameLabel)
         boxView.addSubview(typeLabel)
         boxView.addSubview(distanceLabel)
@@ -25,9 +23,7 @@ final class NearbyBreweryCell: UITableViewCell {
         boxView.layer.shadowRadius = 2
         boxView.layer.shadowOpacity = 1
         boxView.layer.cornerRadius = 8
-        
-        iconView.tintColor = .white
-                
+                        
         nameLabel.font = .cardTitle
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
@@ -42,7 +38,6 @@ final class NearbyBreweryCell: UITableViewCell {
     
     private func setConstraints() {
         boxView.translatesAutoresizingMaskIntoConstraints = false
-        iconView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
         distanceLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -54,11 +49,8 @@ final class NearbyBreweryCell: UITableViewCell {
             boxView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
             boxView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8),
             
-            iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            iconView.leadingAnchor.constraint(equalTo: boxView.leadingAnchor, constant: 16),
-            
             nameLabel.topAnchor.constraint(equalTo: boxView.topAnchor, constant: 16),
-            nameLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 16),
+            nameLabel.leadingAnchor.constraint(equalTo: boxView.leadingAnchor, constant: 16),
             nameLabel.trailingAnchor.constraint(equalTo: chevron.leadingAnchor, constant: -16),
             
             typeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
