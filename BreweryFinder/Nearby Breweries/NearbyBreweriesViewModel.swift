@@ -9,6 +9,7 @@ final class NearbyBreweriesViewModel: NSObject {
     private let breweries = CurrentValueSubject<[Brewery], Never>([])
     private let showActivityIndicatorSubject = CurrentValueSubject<Bool, Never>(false)
     private let errorSubject = PassthroughSubject<String, Never>()
+    private var userLocation: CLLocationCoordinate2D?
 
     var breweriesUpdated: AnyPublisher<Void, Never> {
         breweries
@@ -22,10 +23,10 @@ final class NearbyBreweriesViewModel: NSObject {
             .dropFirst()
             .map { breweries in
                 breweries.compactMap { brewery in
-                    guard let coordinate = brewery.coordinate else {
+                    guard let location = brewery.location else {
                         return nil
                     }
-                    return MKPlacemark(coordinate: coordinate)
+                    return MKPlacemark(coordinate: location.coordinate)
             }
         }
         .eraseToAnyPublisher()
@@ -34,10 +35,10 @@ final class NearbyBreweriesViewModel: NSObject {
     var mapRegion: AnyPublisher<MKCoordinateRegion, Never> {
         breweries.compactMap { breweries in
             guard
-                let minLatitude = breweries.compactMap(\.coordinate?.latitude).min(),
-                let maxLatitude = breweries.compactMap(\.coordinate?.latitude).max(),
-                let minLongitude = breweries.compactMap(\.coordinate?.longitude).min(),
-                let maxLongitude = breweries.compactMap(\.coordinate?.longitude).max() else {
+                let minLatitude = breweries.compactMap(\.location?.coordinate.latitude).min(),
+                let maxLatitude = breweries.compactMap(\.location?.coordinate.latitude).max(),
+                let minLongitude = breweries.compactMap(\.location?.coordinate.longitude).min(),
+                let maxLongitude = breweries.compactMap(\.location?.coordinate.longitude).max() else {
                     return nil
                 }
             
@@ -70,6 +71,7 @@ final class NearbyBreweriesViewModel: NSObject {
         showActivityIndicatorSubject.send(true)
         do {
             let location = try await locationService.getLocation()
+            userLocation = location
             breweries.send(try await searchService.breweriesNear(location: location))
             showActivityIndicatorSubject.send(false)
         } catch {

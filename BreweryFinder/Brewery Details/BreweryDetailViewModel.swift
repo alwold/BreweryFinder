@@ -10,8 +10,8 @@ final class BreweryDetailViewModel {
     init(brewery: Brewery) {
         self.brewery = brewery
         name = brewery.name
-        if let coordinate = brewery.coordinate {
-            mapAnnotation = MKPlacemark(coordinate: coordinate)
+        if let location = brewery.location {
+            mapAnnotation = MKPlacemark(coordinate: location.coordinate)
         } else {
             mapAnnotation = nil
         }
@@ -62,8 +62,8 @@ final class BreweryDetailViewModel {
     }
     
     var mapRegion: MKCoordinateRegion? {
-        if let coordinate = brewery.coordinate {
-            return MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        if let location = brewery.location {
+            return MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         } else {
             return nil
         }
