@@ -38,21 +38,22 @@ class CoreLocationService: NSObject, LocationService, CLLocationManagerDelegate 
 }
 
 class LocationPermissionDelegate: NSObject, CLLocationManagerDelegate {
-    let continuation: CheckedContinuation<CLAuthorizationStatus, Never>
+    var continuation: CheckedContinuation<CLAuthorizationStatus, Never>?
     
     init(continuation: CheckedContinuation<CLAuthorizationStatus, Never>) {
         self.continuation = continuation
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        continuation.resume(returning: manager.authorizationStatus)
+        continuation?.resume(returning: manager.authorizationStatus)
+        continuation = nil
     }
 }
 
 class LocationRequestDelegate: NSObject, CLLocationManagerDelegate {
     struct NoLocationError: Error {}
     
-    let continuation: CheckedContinuation<CLLocationCoordinate2D, Error>
+    var continuation: CheckedContinuation<CLLocationCoordinate2D, Error>?
     
     init(continuation: CheckedContinuation<CLLocationCoordinate2D, Error>) {
         self.continuation = continuation
@@ -60,13 +61,16 @@ class LocationRequestDelegate: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            continuation.resume(returning: location.coordinate)
+            continuation?.resume(returning: location.coordinate)
+            continuation = nil
         } else {
-            continuation.resume(throwing: NoLocationError())
+            continuation?.resume(throwing: NoLocationError())
+            continuation = nil
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        continuation.resume(throwing: error)
+        continuation?.resume(throwing: error)
+        continuation = nil
     }
 }

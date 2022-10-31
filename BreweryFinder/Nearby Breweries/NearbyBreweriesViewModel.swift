@@ -10,6 +10,7 @@ final class NearbyBreweriesViewModel: NSObject {
     private let showActivityIndicatorSubject = CurrentValueSubject<Bool, Never>(false)
     private let errorSubject = PassthroughSubject<String, Never>()
     private var userLocation: CLLocationCoordinate2D?
+    private let distanceFormatter = MKDistanceFormatter()
 
     var breweriesUpdated: AnyPublisher<Void, Never> {
         breweries
@@ -86,6 +87,12 @@ final class NearbyBreweriesViewModel: NSObject {
     }
 }
 
+struct NearbyBrewery {
+    let name: String
+    let type: String
+    let distance: String?
+}
+
 extension NearbyBreweriesViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         numberOfRows(in: section)
@@ -95,15 +102,30 @@ extension NearbyBreweriesViewModel: UITableViewDataSource {
         breweries.value.count
     }
     
+    func nearbyBrewery(at row: Int) -> NearbyBrewery {
+        let brewery = breweries.value[row]
+
+        let name = brewery.name
+        let type = brewery.breweryType
+        let distance: String?
+        if let location = brewery.location, let userLocation {
+            let distanceInMeters = location.distance(from: CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude))
+            let distanceString = distanceFormatter.string(fromDistance: distanceInMeters)
+            distance = "\(distanceString) away"
+        } else {
+            distance = nil
+        }
+        return NearbyBrewery(name: name, type: type, distance: distance)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearbyBreweryCell", for: indexPath) as! NearbyBreweryCell
         
-        cell.nameLabel.text = label(row: indexPath.row)
+        let brewery = nearbyBrewery(at: indexPath.row)
+        cell.nameLabel.text = brewery.name
+        cell.typeLabel.text = brewery.type
+        cell.distanceLabel.text = brewery.distance
         
         return cell
-    }
-    
-    func label(row: Int) -> String {
-        breweries.value[row].name
     }
 }
