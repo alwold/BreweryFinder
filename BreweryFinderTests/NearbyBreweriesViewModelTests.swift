@@ -1,4 +1,5 @@
 @testable import BreweryFinder
+import Combine
 import CoreLocation
 import MapKit
 import XCTest
@@ -32,10 +33,11 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
         let expectation = expectation(description: "breweriesUpdated")
         
         var breweriesUpdatedReceivedEvent = false
-        let cancellable = viewModel.breweriesUpdated.sink { _ in
+        var cancellables: Set<AnyCancellable> = []
+        viewModel.breweriesUpdated.sink { _ in
             breweriesUpdatedReceivedEvent = true
             expectation.fulfill()
-        }
+        }.store(in: &cancellables)
 
         await viewModel.viewDidAppear()
         
@@ -79,10 +81,11 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
         let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
         var receivedAnnotations: [MKAnnotation]?
         let expectation = expectation(description: "wait for map annotations")
-        let cancellable = viewModel.mapAnnotations.sink { annotations in
+        var cancellables: Set<AnyCancellable> = []
+        viewModel.mapAnnotations.sink { annotations in
             receivedAnnotations = annotations
             expectation.fulfill()
-        }
+        }.store(in: &cancellables)
 
         await viewModel.viewDidAppear()
         
@@ -101,10 +104,11 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
         let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
         var receivedMapRegion: MKCoordinateRegion?
         let expectation = expectation(description: "wait for map region")
-        let cancellable = viewModel.mapRegion.sink { region in
+        var cancellables: Set<AnyCancellable> = []
+        viewModel.mapRegion.sink { region in
             receivedMapRegion = region
             expectation.fulfill()
-        }
+        }.store(in: &cancellables)
 
         await viewModel.viewDidAppear()
         
@@ -127,12 +131,14 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
 
         let expectation = expectation(description: "wait for activity indicator")
         var receivedShowActivityIndicator: Bool?
-        let cancellable = viewModel.showActivityIndicator
+        var cancellables: Set<AnyCancellable> = []
+        viewModel.showActivityIndicator
             .dropFirst().first() // ignore the initial value, which is set to false, then wait for just the first event
             .sink { showActivityIndicator in
                 receivedShowActivityIndicator = showActivityIndicator
                 expectation.fulfill()
             }
+            .store(in: &cancellables)
         
         await viewModel.viewDidAppear()
         
@@ -148,13 +154,15 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
 
         let expectation = expectation(description: "wait for activity indicator")
         var receivedShowActivityIndicator: Bool?
-        let cancellable = viewModel.showActivityIndicator
+        var cancellables: Set<AnyCancellable> = []
+        viewModel.showActivityIndicator
             .dropFirst(2) // initial value should be false, then we should get a true when loading starts (drop those two)
             .first() // then finally a false when loading is done, which is what we are checking for
             .sink { showActivityIndicator in
                 receivedShowActivityIndicator = showActivityIndicator
                 expectation.fulfill()
             }
+            .store(in: &cancellables)
         
         await viewModel.viewDidAppear()
         

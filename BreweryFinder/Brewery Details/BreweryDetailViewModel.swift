@@ -11,7 +11,7 @@ final class BreweryDetailViewModel {
         self.brewery = brewery
         name = brewery.name
         if let location = brewery.location {
-            var annotation = MKPointAnnotation()
+            let annotation = MKPointAnnotation()
             annotation.coordinate = location.coordinate
             annotation.title = brewery.name
             mapAnnotation = annotation
