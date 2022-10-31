@@ -38,7 +38,7 @@ erDiagram
 ```
 
 ## Testing
-When building the app, one of the goals was to push as much logic as possible into view models, so that it is less coupled to UIKit. With that in mind, test coverage on the view models was the highest priority, and they are about 80% covered. When the view models depend on services, they were generally replaced with test doubles. Test doubles generally follow the naming convention outlined here, using mostly spies or stubs in this app:
+When building the app, one of the goals was to push as much logic as possible into view models, so that it is less coupled to UIKit. With that in mind, test coverage on the view models was the highest priority. When the view models depend on services, they were generally replaced with test doubles. Test doubles generally follow the naming convention outlined here, using mostly spies or stubs in this app:
 
 https://martinfowler.com/bliki/TestDouble.html
 
