@@ -56,13 +56,16 @@ final class NearbyBreweriesViewModelTests: XCTestCase {
         XCTAssertEqual(rows, 2)
     }
     
-    func test_table_showsTheNameOfTheBrewery() async {
-        let locationService = StubLocationService(location: CLLocationCoordinate2D(latitude: -112.123, longitude: 33.456))
-        let searchService = StubSearchService(breweries: [.exampleBrewery(name: "Four Peaks"), .exampleBrewery(name: "Fate")])
+    func test_table_showsNameTypeAndDistance() async {
+        let locationService = StubLocationService(location: CLLocationCoordinate2D(latitude: 33.456, longitude: -112.123))
+        let searchService = StubSearchService(breweries: [.exampleBrewery(name: "Four Peaks", breweryType: "large", latitude: "33.419396", longitude: "-111.915975"), .exampleBrewery(name: "Fate")])
         let viewModel = NearbyBreweriesViewModel(locationService: locationService, searchService: searchService)
         await viewModel.viewDidAppear()
         
-        XCTAssertEqual(viewModel.label(row: 0), "Four Peaks")
+        let nearbyBrewery = viewModel.nearbyBrewery(at: 0)
+        XCTAssertEqual(nearbyBrewery.name, "Four Peaks")
+        XCTAssertEqual(nearbyBrewery.type, "large")
+        XCTAssertEqual(nearbyBrewery.distance, "12 miles away")
     }
     
     func test_mapAnnotations_showBreweriesThatHaveCoordinates() async {
