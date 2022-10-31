@@ -4,6 +4,8 @@ protocol HomeViewControllerDelegate: AnyObject {
     func findByLocationButtonTapped() async
 }
 
+// The `HomeViewController` provides the home page, which just has a button to start
+// the search.
 final class HomeViewController: UIViewController {
     weak var delegate: HomeViewControllerDelegate?
 

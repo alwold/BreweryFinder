@@ -25,6 +25,7 @@ final class BreweryDetailViewModel {
         }
     }
     
+    /// formatted address for display
     var address: String {
         var address = [brewery.street, brewery.address2, brewery.address3]
             .compactMap { $0 }.joined(separator: "\n")
@@ -64,6 +65,7 @@ final class BreweryDetailViewModel {
         }
     }
     
+    /// Map region to display for the detail screen. Includes the brewery at the center, with some extra space.
     var mapRegion: MKCoordinateRegion? {
         if let location = brewery.location {
             return MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))

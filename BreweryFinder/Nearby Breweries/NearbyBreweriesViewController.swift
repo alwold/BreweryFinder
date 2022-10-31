@@ -6,6 +6,8 @@ protocol NearbyBreweriesViewControllerDelegate: AnyObject {
     func cancelButtonTapped()
 }
 
+/// The `NearbyBreweriesViewController` provides a list of breweries near the user, with a map
+/// view on top.
 final class NearbyBreweriesViewController: UIViewController {
     private let viewModel: NearbyBreweriesViewModel
     private var cancellables: Set<AnyCancellable> = []
@@ -26,8 +28,11 @@ final class NearbyBreweriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nearbyBreweriesView.tableView.dataSource = viewModel
+        
         nearbyBreweriesView.tableView.delegate = self
+
+        // bind view model to ui elements
+        nearbyBreweriesView.tableView.dataSource = viewModel
         viewModel.breweriesUpdated
             .receive(on: DispatchQueue.main)
             .sink { [nearbyBreweriesView] in

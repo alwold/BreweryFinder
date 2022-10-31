@@ -4,6 +4,8 @@ protocol BreweryDetailViewControllerDelegate: AnyObject {
     func websiteButtonTapped(for: URL)
 }
 
+/// The `BreweryDetailViewController` provides information about a given brewery. It is accessible
+/// by tapping on a brewery in the nearby breweries view.
 final class BreweryDetailViewController: UIViewController {
     private let viewModel: BreweryDetailViewModel
     
@@ -31,6 +33,8 @@ final class BreweryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Bind data from the view model to UI elements
         breweryDetailView.nameLabel.text = viewModel.name
         if let mapAnnotation = viewModel.mapAnnotation {
             breweryDetailView.mapView.addAnnotation(mapAnnotation)
@@ -50,6 +54,7 @@ final class BreweryDetailViewController: UIViewController {
             breweryDetailView.mapView.setRegion(mapRegion, animated: false)
         }
         
+        // Bind actions from the view to the view model
         breweryDetailView.phoneButton.addAction(UIAction { [viewModel] _ in
             viewModel.phoneButtonTapped()
         }, for: .touchUpInside)
