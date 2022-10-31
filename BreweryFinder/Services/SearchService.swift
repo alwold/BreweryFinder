@@ -52,7 +52,9 @@ class OpenBreweryDBSearchService: SearchService {
     }
     
     func breweriesNear(location: CLLocationCoordinate2D) async throws -> [Brewery] {
-        let (data, response) = try await session.data(for: request(path: "/breweries", query: ["by_dist": "\(location.latitude),\(location.longitude)"]))
+        let (data, _) = try await session.data(for: request(path: "/breweries", query: ["by_dist": "\(location.latitude),\(location.longitude)"]))
+        
+        // it would probably be ideal to check the response code here, but the data should also fail to decode in the case where there's an error, and the user experience will be the same
         
         return try decoder.decode([Brewery].self, from: data)
     }
