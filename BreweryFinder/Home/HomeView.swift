@@ -27,6 +27,8 @@ final class HomeView: UIView {
         hintLabel.lineBreakMode = .byWordWrapping
         hintLabel.textAlignment = .center
         hintLabel.textColor = .homeText
+        
+        findByLocationButton.accessibilityLabel = "Tap to find breweries."
     }
         
     private func setConstraints() {

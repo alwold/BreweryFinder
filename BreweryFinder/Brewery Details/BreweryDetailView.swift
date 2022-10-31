@@ -30,7 +30,9 @@ final class BreweryDetailView: UIView {
         addressLabel.lineBreakMode = .byWordWrapping
         
         phoneButton.setTitleColor(.blue, for: .normal)
+        phoneButton.accessibilityHint = "Tap to call"
         websiteButton.setTitleColor(.blue, for: .normal)
+        websiteButton.accessibilityHint = "Tap to visit"
         
         mapView.showsUserLocation = true
     }
