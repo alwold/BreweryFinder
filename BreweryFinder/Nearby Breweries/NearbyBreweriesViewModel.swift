@@ -27,7 +27,10 @@ final class NearbyBreweriesViewModel: NSObject {
                     guard let location = brewery.location else {
                         return nil
                     }
-                    return MKPlacemark(coordinate: location.coordinate)
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = location.coordinate
+                    annotation.title = brewery.name
+                    return annotation
             }
         }
         .eraseToAnyPublisher()
