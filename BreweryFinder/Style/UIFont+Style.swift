@@ -12,4 +12,10 @@ extension UIFont {
         let fontMetrics = UIFontMetrics(forTextStyle: .largeTitle)
         return fontMetrics.scaledFont(for: base)
     }
+    
+    static var detailTitle: UIFont {
+        let base = UIFont.boldSystemFont(ofSize: 30)
+        let fontMetrics = UIFontMetrics(forTextStyle: .largeTitle)
+        return fontMetrics.scaledFont(for: base)
+    }
 }

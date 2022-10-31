@@ -6,6 +6,6 @@ extension UIColor {
     }
     
     static var primary: UIColor {
-        UIColor(red: 0xFF/0xff, green: 0xC3/0xff, blue: 0x13/0xff, alpha: 1)
+        UIColor(red: 0xe9/0xff, green: 0xaf/0xff, blue: 0x00/0xff, alpha: 1)
     }
 }

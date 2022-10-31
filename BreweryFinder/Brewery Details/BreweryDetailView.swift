@@ -21,7 +21,7 @@ final class BreweryDetailView: UIView {
         backgroundColor = .white
         
         nameLabel.textAlignment = .center
-        nameLabel.font = .largeTitle
+        nameLabel.font = .detailTitle
         nameLabel.textColor = .homeText
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
@@ -29,11 +29,20 @@ final class BreweryDetailView: UIView {
         addressLabel.textColor = .black
         addressLabel.numberOfLines = 0
         addressLabel.lineBreakMode = .byWordWrapping
+        addressLabel.textColor = .homeText
+        addressLabel.font = .preferredFont(forTextStyle: .body)
         
         phoneButton.setTitleColor(.blue, for: .normal)
         phoneButton.accessibilityHint = "Tap to call"
+        phoneButton.setTitleColor(.homeText, for: .normal)
+        phoneButton.setImage(UIImage(systemName: "phone"), for: .normal)
+        phoneButton.tintColor = .homeText
+        
         websiteButton.setTitleColor(.blue, for: .normal)
         websiteButton.accessibilityHint = "Tap to visit"
+        websiteButton.setTitleColor(.homeText, for: .normal)
+        websiteButton.setImage(UIImage(systemName: "link"), for: .normal)
+        websiteButton.tintColor = .homeText
         
         mapView.showsUserLocation = true
     }
@@ -52,16 +61,16 @@ final class BreweryDetailView: UIView {
             
             mapView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             mapView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16),
-            mapView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.33),
-            mapView.heightAnchor.constraint(equalTo: mapView.widthAnchor),
+            mapView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+            mapView.heightAnchor.constraint(equalTo: mapView.widthAnchor, multiplier: 0.60),
             
-            addressLabel.centerYAnchor.constraint(equalTo: mapView.centerYAnchor),
-            addressLabel.leadingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: 8),
+            addressLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 16),
+            addressLabel.leadingAnchor.constraint(equalTo: mapView.leadingAnchor),
             
-            phoneButton.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 16),
-            phoneButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor),
+            phoneButton.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 16),
+            phoneButton.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor),
             
-            websiteButton.topAnchor.constraint(equalTo: phoneButton.bottomAnchor, constant: 8),
+            websiteButton.topAnchor.constraint(equalTo: phoneButton.bottomAnchor, constant: 16),
             websiteButton.leadingAnchor.constraint(equalTo: phoneButton.leadingAnchor)
         ])
     }
