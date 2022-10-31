@@ -1,6 +1,7 @@
 import CoreLocation
 import Foundation
 
+/// `Brewery` represents a brewery that has been retrieved from the Open Brewery API.
 struct Brewery: Decodable {
     let name: String
     let breweryType: String
@@ -23,7 +24,12 @@ struct Brewery: Decodable {
     }
 }
 
+/// `SearchService` provides an interface for searching for breweries based on location.
 protocol SearchService {
+    /// Search for breweries near the given location.
+    ///
+    /// - Parameter location: the location around which to search
+    /// - Returns: A list of breweries near the search location
     func breweriesNear(location: CLLocationCoordinate2D) async throws -> [Brewery]
 }
 

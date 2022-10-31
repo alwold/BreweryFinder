@@ -1,8 +1,22 @@
 import CoreLocation
 
+/// `LocationService` abstracts access to location data for the device.
 protocol LocationService {
+    /// Get the app's current level of access to location data.
+    ///
+    /// - Returns: Current authorization status
     var authorizationStatus: CLAuthorizationStatus { get }
+    
+    /// Request authorization to use location data for the app. This prompts the user for location access and
+    /// then, when completed, return the new authorization status.
+    ///
+    /// - Returns: Authorization status after prompting the user
     func requestWhenInUseAuthorization() async -> CLAuthorizationStatus
+    
+    /// Get a single location coordinate from the system.
+    ///
+    /// - Throws: `NoLocationError` if no location was available, or any underlying error thrown by the system.
+    /// - Returns: Coordinate
     func getLocation() async throws -> CLLocationCoordinate2D
 }
 
