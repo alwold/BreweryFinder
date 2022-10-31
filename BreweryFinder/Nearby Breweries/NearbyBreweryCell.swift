@@ -11,18 +11,17 @@ final class NearbyBreweryCell: UITableViewCell {
         
         setConstraints()
 
-        boxView.backgroundColor = .white
+        boxView.backgroundColor = .primary
         boxView.layer.shadowOffset = CGSize(width: 2, height: 2)
-        boxView.layer.shadowColor = UIColor.orange.cgColor
+        boxView.layer.shadowColor = UIColor.primary.cgColor
         boxView.layer.shadowRadius = 2
         boxView.layer.shadowOpacity = 1
-        boxView.layer.cornerRadius = 3
-        boxView.layer.borderColor = UIColor.orange.cgColor
-        boxView.layer.borderWidth = 1
+        boxView.layer.cornerRadius = 8
                 
-        nameLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+        nameLabel.font = .cardTitle
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
+        nameLabel.textColor = .white
     }
     
     private func setConstraints() {

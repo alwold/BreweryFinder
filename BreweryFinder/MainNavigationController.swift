@@ -10,6 +10,18 @@ class MainNavigationController: UINavigationController {
         self.locationService = locationService
         super.init(rootViewController: homeViewController)
         homeViewController.delegate = self
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.backgroundColor = .primary
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBar.standardAppearance = navigationBarAppearance
+        navigationBar.compactAppearance = navigationBarAppearance
+        navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationBar.tintColor = .white
+        isNavigationBarHidden = true
+        
+        delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -83,5 +95,15 @@ extension MainNavigationController: BreweryDetailViewControllerDelegate {
     func websiteButtonTapped(for url: URL) {
         let viewController = SFSafariViewController(url: url)
         present(viewController, animated: true)
+    }
+}
+
+extension MainNavigationController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if viewController is HomeViewController {
+            setNavigationBarHidden(true, animated: false)
+        } else {
+            setNavigationBarHidden(false, animated: false)
+        }
     }
 }

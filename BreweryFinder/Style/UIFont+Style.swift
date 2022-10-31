@@ -6,4 +6,10 @@ extension UIFont {
         let fontMetrics = UIFontMetrics(forTextStyle: .largeTitle)
         return fontMetrics.scaledFont(for: base)
     }
+    
+    static var cardTitle: UIFont {
+        let base = UIFont.boldSystemFont(ofSize: 24)
+        let fontMetrics = UIFontMetrics(forTextStyle: .largeTitle)
+        return fontMetrics.scaledFont(for: base)
+    }
 }

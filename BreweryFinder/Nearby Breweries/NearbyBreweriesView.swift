@@ -38,7 +38,7 @@ final class NearbyBreweriesView: UIView {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            mapView.topAnchor.constraint(equalTo: topAnchor),
+            mapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mapView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35),

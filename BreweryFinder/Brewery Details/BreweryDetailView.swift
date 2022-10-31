@@ -21,7 +21,8 @@ final class BreweryDetailView: UIView {
         backgroundColor = .white
         
         nameLabel.textAlignment = .center
-        nameLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        nameLabel.font = .largeTitle
+        nameLabel.textColor = .homeText
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
         
